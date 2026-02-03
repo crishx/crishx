@@ -3,42 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crish-X Technologies | Next-Gen Software</title>
+    <title>Crish-X Technologies | Premium System Utilities</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background-color: #050505; color: white; }
-        .titan-green { color: #00FF66; }
-        .btn-glow:hover { box-shadow: 0 0 15px #00FF66; }
+        /* Crish-X Custom Palette */
+        :root {
+            --titan-green: #00FF66;
+            --titan-dark: #050505;
+            --titan-panel: #111111;
+        }
+        body { background-color: var(--titan-dark); color: white; font-family: 'Segoe UI', Roboto, sans-serif; }
+        
+        /* The "Filmora" Gradient Text Effect */
+        .text-gradient {
+            background: linear-gradient(90deg, #ffffff, #00FF66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glowing Button Effect */
+        .btn-primary {
+            background-color: var(--titan-green);
+            color: black;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.6);
+        }
+
+        /* Secondary "Details" Button */
+        .btn-secondary {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            border-color: var(--titan-green);
+            color: var(--titan-green);
+        }
+
+        /* Glassmorphism Cards */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--titan-green);
+        }
     </style>
 </head>
-<body>
-    <nav class="p-6 flex justify-between items-center border-b border-gray-800">
-        <h1 class="text-2xl font-bold titan-green">CRISH-X</h1>
-        <div class="space-x-6">
-            <a href="#software" class="hover:text-green-400">Software</a>
-            <a href="#shop" class="hover:text-green-400">Shop</a>
-            <a href="#affiliate" class="hover:text-green-400">Affiliates</a>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-rocket text-3xl" style="color: var(--titan-green);"></i>
+                <span class="text-2xl font-bold tracking-wider">CRISH-X</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-gray-300">
+                <a href="#products" class="hover:text-white transition">PRODUCTS</a>
+                <a href="#features" class="hover:text-white transition">FEATURES</a>
+                <a href="#about" class="hover:text-white transition">ABOUT US</a>
+                <a href="#support" class="hover:text-white transition">SUPPORT</a>
+            </div>
+
+            <a href="#download" class="hidden md:block border border-white/20 px-5 py-2 rounded-full text-sm font-bold hover:bg-white hover:text-black transition">
+                Get Pro
+            </a>
         </div>
     </nav>
 
-    <header class="py-20 text-center">
-        <h2 class="text-6xl font-extrabold mb-4">Master Your System.</h2>
-        <p class="text-gray-400 text-xl mb-8">Professional-grade tools for speed, security, and media management.</p>
-        <div class="flex justify-center space-x-4">
-            <a href="#" class="bg-green-500 text-black px-8 py-3 rounded-full font-bold btn-glow">DOWNLOAD TITAN V50</a>
-            <a href="#shop" class="border border-green-500 px-8 py-3 rounded-full font-bold hover:bg-green-500 hover:text-black transition">BUY PRO LICENSE</a>
+    <header class="pt-40 pb-24 px-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-green-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 z-10">
+                <div class="inline-block bg-white/5 border border-white/10 rounded-full px-4 py-1 text-xs font-bold tracking-widest text-green-400">
+                    NEW RELEASE: TITAN V50.0
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black leading-tight">
+                    System Power.<br>
+                    <span class="text-gradient">Unleashed.</span>
+                </h1>
+                <p class="text-gray-400 text-lg leading-relaxed max-w-lg">
+                    The ultimate utility suite for gamers and developers. Mount VRAM, block threats, and accelerate your connection with one click.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/releases/download/v1.0/Titan_Setup.exe" class="btn-primary px-8 py-4 rounded-xl font-bold text-center flex items-center justify-center gap-3 text-lg">
+                        <i class="fa-brands fa-windows"></i> Free Download
+                    </a>
+                    <a href="#features" class="btn-secondary px-8 py-4 rounded-xl font-bold text-center flex items-center justify-center gap-2 text-lg">
+                        View Details <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <p class="text-xs text-gray-500">Compatible with Windows 10/11 • 64-bit</p>
+            </div>
+
+            <div class="relative z-10">
+                <div class="relative rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900 to-black p-4 shadow-2xl shadow-green-900/20 transform rotate-y-12 hover:rotate-0 transition duration-500">
+                    <div class="rounded bg-black h-[400px] w-full flex flex-col items-center justify-center border border-dashed border-gray-700">
+                        <i class="fa-solid fa-gauge-high text-6xl text-green-500 mb-4"></i>
+                        <span class="text-gray-500 font-mono">APP DASHBOARD PREVIEW</span>
+                        <span class="text-xs text-gray-600 mt-2">(Upload your Titan screenshot to GitHub)</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section id="shop" class="py-20 bg-zinc-900 px-10">
-        <h3 class="text-3xl font-bold text-center mb-10">Premium Licenses</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div class="p-8 border border-gray-700 rounded-xl bg-black">
-                <h4 class="text-xl font-bold mb-2">Titan Ultimate Pro</h4>
-                <p class="text-gray-400 mb-6">Lifetime access to VRAM mounting and deep cleaning.</p>
-                <button class="w-full bg-green-500 text-black py-2 rounded font-bold">Buy Now - $19.99</button>
+    <section id="features" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Why Choose <span class="text-green-500">Titan?</span></h2>
+                <p class="text-gray-400">Engineered in Sri Lanka for global performance.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-green-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-microchip text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">VRAM Mounting</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Allocate up to 64GB of Virtual RAM from your SSD to handle heavy rendering tasks without crashing.
+                    </p>
+                </div>
+
+                <div class="feature-card p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-shield-cat text-2xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Omni-Hunter Core</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Deep forensic cleaning that removes hidden bloatware other cleaners miss.
+                    </p>
+                </div>
+
+                <div class="feature-card p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-bolt text-2xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Speed Sonic</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Uncap your internet bandwidth and stabilize latency for gaming and downloads.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
+
+    <section id="about" class="py-24 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">About <span class="text-green-500">Crish-X</span></h2>
+                <div class="space-y-4 text-gray-300">
+                    <p>
+                        Founded by <strong>Sampath Wijitha Kumara</strong>, Crish-X Technologies is a pioneering software lab based in Sri Lanka. 
+                    </p>
+                    <p>
+                        We don't just build apps; we build "System Accelerators." Our mission is to provide professional-grade tools like <strong>Titan</strong> and <strong>Speed Sonic</strong> that allow hardware to perform beyond its factory limits.
+                    </p>
+                    <p>
+                        What started as a single script is now a full utility ecosystem used by power users worldwide.
+                    </p>
+                </div>
+                <div class="mt-8 flex gap-4">
+                    <div class="text-center">
+                        <span class="block text-3xl font-bold text-white">2k+</span>
+                        <span class="text-xs text-gray-500">ACTIVE USERS</span>
+                    </div>
+                    <div class="text-center border-l border-gray-700 pl-4">
+                        <span class="block text-3xl font-bold text-white">50+</span>
+                        <span class="text-xs text-gray-500">UPDATES</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white/5 rounded-2xl p-8 border border-white/10">
+                <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-red-500"></i> HQ: Sri Lanka
+                </h3>
+                <div class="h-48 bg-gray-800 rounded flex items-center justify-center text-gray-600">
+                    [ Interactive Map Placeholder ]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-white mb-6">Ready to upgrade?</h2>
+            <a href="#download" class="inline-block bg-white text-black px-10 py-3 rounded-full font-bold hover:bg-gray-200 transition">
+                Download Now
+            </a>
+            <p class="mt-8 text-gray-600 text-sm">
+                &copy; 2026 Crish-X Technologies. All Rights Reserved. <br>
+                Privacy Policy | Terms of Service
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
