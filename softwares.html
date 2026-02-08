@@ -3,129 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Suite | SENTINEL PRIME</title>
+    <title>Software Suite | SENTINEL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* CRISH-X DARK THEME ENGINE */
-        :root {
-            --titan-green: #00FF66;
-            --titan-blue: #3b82f6;
-            --titan-cyan: #06b6d4;
-            --titan-dark: #050505;
-        }
+        :root { --titan-dark: #050505; --titan-blue: #3b82f6; }
         body { background-color: var(--titan-dark); color: white; font-family: 'Segoe UI', sans-serif; }
+        
+        /* Nav */
+        .nav-solid { background: #000000; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 
-        /* Navigation Glass */
-        .nav-glass {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Wide Software Cards */
+        /* Software Cards */
         .software-card {
             background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.2) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s;
         }
-        .software-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.06);
-        }
+        .software-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.06); }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="fixed w-full z-50 nav-glass">
+    <nav class="fixed w-full z-50 nav-solid">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <i class="fa-solid fa-shield-halved text-2xl text-green-500 group-hover:rotate-12 transition"></i>
-                <span class="text-xl font-bold tracking-wide">SENTINEL <span class="text-green-500">PRIME</span></span>
+            <a href="index.html" class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-xl text-green-500"></i>
+                <span class="text-lg font-bold tracking-wide">SENTINEL</span>
             </a>
-            
-            <div class="hidden md:flex gap-8 text-sm font-bold text-gray-400">
-                <a href="index.html" class="hover:text-white transition">HOME</a>
-                <a href="online-tools.html" class="hover:text-white transition">TOOLS</a>
-                <a href="softwares.html" class="text-green-500">SOFTWARE</a>
-                <a href="about.html" class="hover:text-white transition">ABOUT</a>
+            <div class="flex gap-6 text-sm font-bold text-gray-500">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="online-tools.html" class="hover:text-white transition">Tools</a>
+                <span class="text-white border-b-2 border-blue-500">Software</span>
             </div>
-
-            <a href="affiliate_index.html" class="hidden md:block border border-green-500 text-green-500 px-5 py-2 rounded-full text-xs font-bold hover:bg-green-500 hover:text-black transition">
-                JOIN PORTAL
-            </a>
         </div>
     </nav>
 
-    <header class="pt-40 pb-20 px-6 text-center">
-        <div class="inline-block mb-4 px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-bold tracking-widest border border-blue-500/30">
-            DESKTOP APPLICATIONS
-        </div>
-        <h1 class="text-5xl md:text-6xl font-black mb-6">SYSTEM <span class="text-blue-500">SOFTWARE</span></h1>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-            Professional-grade engines for Windows. 
-            Allocate hardware resources, uncap bandwidth, and secure your environment.
-        </p>
+    <header class="pt-32 pb-16 text-center px-6">
+        <h1 class="text-4xl md:text-5xl font-black mb-4">SYSTEM <span class="text-blue-500">SOFTWARE</span></h1>
+        <p class="text-gray-400">Desktop applications for Windows. High performance, zero bloat.</p>
     </header>
 
-    <section class="max-w-6xl mx-auto px-6 pb-32 space-y-12">
+    <section class="max-w-5xl mx-auto px-6 pb-24 space-y-8">
         
-        <div class="software-card p-10 rounded-3xl flex flex-col md:flex-row items-center gap-10 border-l-4 border-l-blue-600 group">
-            <div class="w-32 h-32 bg-blue-500/10 rounded-2xl flex items-center justify-center shrink-0 border border-blue-500/20 group-hover:bg-blue-500/20 transition duration-500">
-                <i class="fa-brands fa-windows text-6xl text-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]"></i>
+        <div class="software-card p-8 rounded-3xl flex flex-col md:flex-row items-center gap-8 border-l-4 border-l-blue-600">
+            <div class="w-24 h-24 bg-blue-500/10 rounded-2xl flex items-center justify-center shrink-0 border border-blue-500/20">
+                <i class="fa-brands fa-windows text-5xl text-blue-500"></i>
             </div>
-            <div class="text-center md:text-left flex-1">
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                    <h3 class="text-3xl font-bold text-white">Titan V50 <span class="text-sm font-normal text-gray-500 bg-white/5 px-2 py-1 rounded ml-2">v50.0.1</span></h3>
-                    <div class="text-yellow-400 text-sm mt-2 md:mt-0">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-                <p class="text-gray-400 mb-6 text-lg">
-                    The ultimate system architect. Allocate up to 64GB of Virtual RAM from your SSD and utilize the Omni-Hunter Core to remove hidden bloatware that traditional cleaners miss.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-xl hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition">
-                        <i class="fa-solid fa-download mr-2"></i> DOWNLOAD .EXE
-                    </a>
-                    <a href="#" class="border border-white/20 text-gray-300 font-bold py-3 px-8 rounded-xl hover:border-white hover:text-white transition">
-                        VIEW DOCS
-                    </a>
-                </div>
+            <div class="flex-1 text-center md:text-left">
+                <h3 class="text-2xl font-bold text-white mb-2">Titan V50</h3>
+                <p class="text-gray-400 mb-6 text-sm">Allocate 64GB VRAM and clean hidden system junk with Omni-Hunter Core.</p>
+                <button class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-500 transition text-sm">DOWNLOAD .EXE</button>
             </div>
         </div>
 
-        <div class="software-card p-10 rounded-3xl flex flex-col md:flex-row items-center gap-10 border-l-4 border-l-cyan-400 group">
-            <div class="w-32 h-32 bg-cyan-500/10 rounded-2xl flex items-center justify-center shrink-0 border border-cyan-500/20 group-hover:bg-cyan-500/20 transition duration-500">
-                <i class="fa-solid fa-bolt text-6xl text-cyan-400 drop-shadow-[0_0_20px_rgba(6,182,212,0.5)]"></i>
+        <div class="software-card p-8 rounded-3xl flex flex-col md:flex-row items-center gap-8 border-l-4 border-l-cyan-400">
+            <div class="w-24 h-24 bg-cyan-500/10 rounded-2xl flex items-center justify-center shrink-0 border border-cyan-500/20">
+                <i class="fa-solid fa-bolt text-5xl text-cyan-400"></i>
             </div>
-            <div class="text-center md:text-left flex-1">
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                    <h3 class="text-3xl font-bold text-white">Speed Sonic <span class="text-sm font-normal text-gray-500 bg-white/5 px-2 py-1 rounded ml-2">v2.4</span></h3>
-                    <div class="text-yellow-400 text-sm mt-2 md:mt-0">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                </div>
-                <p class="text-gray-400 mb-6 text-lg">
-                    Network velocity unchained. Bypass ISP throttling limits, stabilize gaming latency (ping), and accelerate download packet requests using deep-socket connections.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#" class="bg-cyan-500 text-black font-bold py-3 px-8 rounded-xl hover:bg-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition">
-                        <i class="fa-solid fa-download mr-2"></i> DOWNLOAD .EXE
-                    </a>
-                    <a href="#" class="border border-white/20 text-gray-300 font-bold py-3 px-8 rounded-xl hover:border-white hover:text-white transition">
-                        VIEW DOCS
-                    </a>
-                </div>
+            <div class="flex-1 text-center md:text-left">
+                <h3 class="text-2xl font-bold text-white mb-2">Speed Sonic</h3>
+                <p class="text-gray-400 mb-6 text-sm">Uncap ISP bandwidth limits and stabilize gaming ping.</p>
+                <button class="bg-cyan-500 text-black font-bold py-2 px-6 rounded-lg hover:bg-cyan-400 transition text-sm">DOWNLOAD .EXE</button>
             </div>
         </div>
 
     </section>
-
-    <footer class="border-t border-white/10 py-12 text-center bg-black">
-        <p class="text-gray-600 text-sm font-bold tracking-widest">&copy; 2026 CRISH-X TECHNOLOGIES</p>
-    </footer>
-
 </body>
 </html>
