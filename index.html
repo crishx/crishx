@@ -3,213 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crish-X | Liquid Glass Suite</title>
+    <title>SENTINEL PRIME | Future Unleashed</title>
+    <meta name="description" content="Sentinel Prime: The apex of AI-driven optimization and cyber-security.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+
     <style>
-        /* --- LIQUID GLASS THEME ENGINE --- */
+        /* =========================================
+           1. THE LIQUID CRYSTAL THEME ENGINE
+           ========================================= */
         :root {
-            --glass-bg: rgba(255, 255, 255, 0.25);
-            --glass-border: rgba(255, 255, 255, 0.5);
-            --shadow-purple: rgba(138, 43, 226, 0.6);
-            --shadow-cyan: rgba(0, 255, 239, 0.6);
-            --text-dark: #1a1a1a;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --glass-shadow: rgba(17, 12, 46, 0.15);
+            --accent-indigo: #6366f1;
+            --accent-teal: #2dd4bf;
+            --accent-purple: #c084fc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
         }
 
         body {
-            /* Milky White Background Gradient */
-            background: linear-gradient(135deg, #f0f2f5, #d9e4f1);
-            color: var(--text-dark);
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            /* Milky White/Grey Gradient Background */
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
             min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- 2. SPLASH SCREEN --- */
+        #splash-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #f3f4f6;
+            z-index: 9999;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            flex-direction: column;
+            transition: opacity 0.8s ease, visibility 0.8s;
         }
+        .splash-loader {
+            width: 50px; height: 50px;
+            border: 5px solid #e5e7eb;
+            border-top: 5px solid var(--accent-indigo);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* Main Glass Container (The base plate) */
-        .glass-container {
+        /* --- 3. GLASS CONTAINERS --- */
+        .glass-panel {
             background: var(--glass-bg);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border-radius: 3rem;
-            border: 2px solid var(--glass-border);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
             box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.1), /* Soft overall shadow */
-                inset 0 0 20px rgba(255, 255, 255, 0.5); /* Inner glow */
-            padding: 3rem;
-            width: 100%;
-            max-w-6xl;
-        }
-
-        /* Navigation Glass Bar */
-        .nav-glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
+                0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06),
+                inset 0 0 20px rgba(255, 255, 255, 0.5); /* Inner Glow */
             border-radius: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 1rem 2rem;
-            margin-bottom: 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        /* 3D Liquid Glass Cards */
+        /* --- 4. 3D EMBOSSED CARDS --- */
         .glass-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(30px);
-            border-radius: 2.5rem;
-            border: 2px solid rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(16px);
+            border-radius: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
             padding: 2.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
-        }
-        /* Purple Theme for Titan */
-        .glass-card.purple {
+            /* The 3D Shadow Effect */
             box-shadow: 
-                0 15px 35px rgba(138, 43, 226, 0.3),
-                inset 0 0 20px rgba(138, 43, 226, 0.1);
+                10px 10px 20px rgba(174, 174, 192, 0.4), 
+                -10px -10px 20px rgba(255, 255, 255, 1);
         }
-        /* Cyan Theme for Speed Sonic */
-        .glass-card.cyan {
-            box-shadow: 
-                0 15px 35px rgba(0, 255, 239, 0.3),
-                inset 0 0 20px rgba(0, 255, 239, 0.1);
-        }
+
         .glass-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 
+                20px 20px 40px rgba(174, 174, 192, 0.5), 
+                -20px -20px 40px rgba(255, 255, 255, 1);
         }
 
-        /* 3D Glowing Icons */
-        .glass-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 1.5rem;
-            display: flex;
+        /* Accent Colors for Cards */
+        .glass-card.indigo { border-bottom: 4px solid var(--accent-indigo); }
+        .glass-card.teal { border-bottom: 4px solid var(--accent-teal); }
+        .glass-card.purple { border-bottom: 4px solid var(--accent-purple); }
+
+        /* --- 5. BUTTONS (PILL SHAPE) --- */
+        .btn-glass {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-        .glass-icon.purple {
-            background: linear-gradient(135deg, #8A2BE2, #a855f7);
-            box-shadow: 0 10px 25px var(--shadow-purple);
-        }
-        .glass-icon.cyan {
-            background: linear-gradient(135deg, #00FFEF, #0ea5e9);
-            box-shadow: 0 10px 25px var(--shadow-cyan);
-        }
-
-        /* 3D Liquid Buttons */
-        .glass-button {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            border-radius: 4rem; /* Pill shape */
-            text-align: center;
-            font-weight: bold;
-            color: white;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            transition: all 0.3s ease;
-            margin-top: 2rem;
-            text-transform: uppercase;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-weight: 700;
             letter-spacing: 1px;
-        }
-        /* Purple Button Theme */
-        .glass-button.purple {
-            background: linear-gradient(90deg, #8A2BE2, #6b21a8);
-            box-shadow: 0 10px 30px var(--shadow-purple);
-        }
-        .glass-button.purple:hover {
-            box-shadow: 0 15px 40px var(--shadow-purple);
-            transform: translateY(-3px);
-        }
-        /* Cyan Button Theme */
-        .glass-button.cyan {
-            background: linear-gradient(90deg, #00FFEF, #00b4d8);
-            box-shadow: 0 10px 30px var(--shadow-cyan);
-        }
-        .glass-button.cyan:hover {
-            box-shadow: 0 15px 40px var(--shadow-cyan);
-            transform: translateY(-3px);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 
+                6px 6px 12px rgba(174, 174, 192, 0.3), 
+                -6px -6px 12px rgba(255, 255, 255, 1);
+            border: 1px solid rgba(255,255,255,0.5);
+            cursor: pointer;
         }
 
-        /* Typography */
-        h2.section-title {
-            font-size: 3rem;
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: linear-gradient(to right, #1a1a1a, #4a4a4a);
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+            border: none;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.7);
+            color: var(--text-primary);
+        }
+        .btn-secondary:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* --- 6. TEXT EFFECTS --- */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-indigo), var(--accent-teal));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-weight: 900;
         }
-        .card-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 0.75rem;
+        
+        .embossed-text {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,1);
         }
-        .card-desc {
-            color: #4a4a4a;
-            line-height: 1.6;
+
+        /* --- 7. HERO VISUAL (The Shield Circle) --- */
+        .hero-circle {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            box-shadow:  20px 20px 60px #d1d1d1, -20px -20px 60px #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: 0 auto;
+        }
+        .hero-circle::before {
+            content: '';
+            position: absolute;
+            inset: 20px;
+            border-radius: 50%;
+            border: 2px solid rgba(99, 102, 241, 0.1);
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem !important; }
+            .hero-flex { flex-direction: column-reverse; text-align: center; }
+            .hero-circle { max-width: 300px; margin-bottom: 40px; }
+            .btn-group { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <main class="glass-container">
-        
-        <nav class="nav-glass">
-            <div class="flex items-center gap-3">
-                <span class="text-2xl font-black tracking-wider text-gray-800">CRISH-X</span>
+    <div id="splash-screen">
+        <div class="text-3xl font-black tracking-widest text-gray-800 mb-4">
+            SENTINEL <span class="gradient-text">PRIME</span>
+        </div>
+        <div class="splash-loader"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <nav class="glass-panel px-8 py-4 flex justify-between items-center sticky top-4 z-50 mb-16">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center shadow-inner">
+                    <i class="fa-solid fa-shield-halved text-indigo-500 text-xl group-hover:scale-110 transition"></i>
+                </div>
+                <span class="text-xl font-black tracking-wide text-gray-800">
+                    SENTINEL <span class="gradient-text">PRIME</span>
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 font-bold text-gray-500 text-sm tracking-wide">
+                <a href="index.html" class="text-indigo-600">HOME</a>
+                <a href="#tools" class="hover:text-indigo-600 transition">TOOLS</a>
+                <a href="softwares.html" class="hover:text-indigo-600 transition">SOFTWARE</a>
+                <a href="about.html" class="hover:text-indigo-600 transition">ABOUT</a>
+                <a href="affiliate_index.html" class="btn-glass btn-primary text-xs py-2 px-6">
+                    JOIN PORTAL
+                </a>
             </div>
-            <div class="hidden md:flex gap-8 font-semibold text-gray-600">
-                <a href="#" class="hover:text-purple-600 transition">SOFTWARE</a>
-                <a href="#" class="hover:text-purple-600 transition">COURSES</a>
-                <a href="#" class="hover:text-purple-600 transition">ABOUT</a>
-            </div>
+
+            <button class="md:hidden text-2xl text-gray-600"><i class="fa-solid fa-bars"></i></button>
         </nav>
 
-        <h2 class="section-title">Software <span class="text-purple-600">Suite</span></h2>
-
-        <div class="grid md:grid-cols-2 gap-10">
-            
-            <div class="glass-card purple">
-                <div class="glass-icon purple">
-                    <i class="fa-brands fa-windows"></i>
+        <section class="hero-flex flex md:flex-row items-center gap-12 mb-32 px-4">
+            <div class="flex-1 space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-100">
+                    <i class="fa-solid fa-microchip text-indigo-500"></i>
+                    <span class="text-xs font-bold text-indigo-900 tracking-widest">NEXT GEN INTELLIGENCE</span>
                 </div>
-                <h3 class="card-title">Titan V50</h3>
-                <p class="card-desc">
-                    VRAM Mounting and Omni-Hunter core for ultimate system cleaning and performance.
+
+                <h1 class="text-6xl md:text-7xl font-black leading-tight text-gray-800 embossed-text">
+                    FUTURE <br>
+                    <span class="gradient-text">UNLEASHED</span>
+                </h1>
+
+                <p class="text-lg text-gray-500 leading-relaxed max-w-lg">
+                    Experience the pinnacle of AI-driven software. Cyber-secure, ultra-optimized, and self-evolving.
+                    <br><span class="font-bold text-gray-800">Free for all. Premium for pro.</span>
                 </p>
-                <a href="#" class="glass-button purple">Download</a>
+
+                <div class="btn-group flex gap-4 pt-4">
+                    <a href="#tools" class="btn-glass btn-primary">
+                        EXPLORE MODULES <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="softwares.html" class="btn-glass btn-secondary">
+                        VIEW SOFTWARE <i class="fa-solid fa-eye"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="glass-card cyan">
-                <div class="glass-icon cyan">
-                    <i class="fa-solid fa-bolt"></i>
+            <div class="flex-1">
+                <div class="hero-circle">
+                    <i class="fa-solid fa-shield-halved text-9xl text-indigo-500 drop-shadow-2xl"></i>
+                    <div class="absolute bottom-8 bg-white/80 backdrop-blur px-6 py-2 rounded-xl shadow-lg border border-white">
+                        <div class="h-2 w-32 bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full w-3/4 bg-gradient-to-r from-indigo-500 to-teal-400"></div>
+                        </div>
+                        <span class="text-xs font-bold text-gray-400 mt-1 block text-center">System Optimized</span>
+                    </div>
                 </div>
-                <h3 class="card-title">Speed Sonic</h3>
-                <p class="card-desc">
-                    Uncap your internet bandwidth and stabilize latency for gaming and downloads.
-                </p>
-                <a href="#" class="glass-button cyan">Download</a>
+            </div>
+        </section>
+
+        <section id="tools" class="mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-2 embossed-text">
+                    NEXUS <span class="gradient-text">CORE TOOLS</span>
+                </h2>
+                <p class="text-gray-500">The apex of future software utilities.</p>
             </div>
 
-        </div>
-    </main>
+            <div class="grid md:grid-cols-3 gap-8 px-4">
+                
+                <div class="glass-card indigo text-center group">
+                    <div class="w-20 h-20 mx-auto bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                        <i class="fa-brands fa-youtube text-4xl text-indigo-500 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Social Downloader</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">
+                        MP3/MP4 from YT and social streams with neural extraction technology.
+                    </p>
+                    <a href="product_view.html?id=social" class="btn-glass btn-secondary w-full justify-center text-xs">
+                        TRY NOW
+                    </a>
+                </div>
 
+                <div class="glass-card teal text-center group">
+                    <div class="w-20 h-20 mx-auto bg-teal-50 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                        <i class="fa-solid fa-broom text-4xl text-teal-500 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">X-Cleaner</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">
+                        Deep neural system optimizer for restoring peak platform performance.
+                    </p>
+                    <a href="product_view.html?id=xcleaner" class="btn-glass btn-secondary w-full justify-center text-xs">
+                        TRY NOW
+                    </a>
+                </div>
+
+                <div class="glass-card purple text-center group">
+                    <div class="w-20 h-20 mx-auto bg-purple-50 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                        <i class="fa-solid fa-bolt text-4xl text-purple-500 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">3X-Big File</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">
+                        Triple-thread binary acceleration for high-velocity massive transfers.
+                    </p>
+                    <a href="product_view.html?id=3xbig" class="btn-glass btn-secondary w-full justify-center text-xs">
+                        TRY NOW
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="glass-panel p-12 text-center">
+            <div class="flex justify-center mb-6 opacity-50">
+                <i class="fa-solid fa-shield-halved text-4xl text-indigo-900"></i>
+            </div>
+            <p class="text-gray-500 text-sm font-bold tracking-widest mb-4">
+                &copy; 2026 CRISHX TECHNOLOGIES | ALL RIGHTS RESERVED
+            </p>
+            <div class="flex justify-center gap-6 text-xl text-gray-400">
+                <a href="#" class="hover:text-indigo-500 transition"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="hover:text-gray-800 transition"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-blue-600 transition"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const splash = document.getElementById('splash-screen');
+            setTimeout(() => {
+                splash.style.opacity = '0';
+                splash.style.visibility = 'hidden';
+            }, 800); // 0.8s delay before fade out
+        });
+    </script>
 </body>
 </html>
